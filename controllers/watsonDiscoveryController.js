@@ -2,7 +2,7 @@ const DiscoveryV1 = require('ibm-watson/discovery/v1');
 const { IamAuthenticator } = require('ibm-watson/auth');
 
 const discovery = new DiscoveryV1({
-    version: process.env.WATSON_DISOCVERY_VERSION,
+    version: process.env.WATSON_DISCOVERY_VERSION,
     authenticator: new IamAuthenticator({
         apikey: process.env.WATSON_DISCOVERY_APIKEY,
     }),
