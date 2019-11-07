@@ -17,7 +17,8 @@ let classifyImage = async (req, res) => {
 
     const classifyParams = {
         imagesFile: fs.createReadStream(files.imagen.path),
-        owners: ['IBM', 'me']
+        owners: ['me']
+        //owners: ['IBM', 'me']
     };
 
     visualRecognition.classify(classifyParams)
