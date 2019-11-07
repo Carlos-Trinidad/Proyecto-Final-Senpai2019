@@ -1,3 +1,5 @@
+require('dotenv').config({silent: true});
+
 const server = require('./app');
 
 let port = process.env.PORT || 3000;

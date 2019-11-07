@@ -2,11 +2,11 @@ const DiscoveryV1 = require('ibm-watson/discovery/v1');
 const { IamAuthenticator } = require('ibm-watson/auth');
 
 const discovery = new DiscoveryV1({
-    version: '2019-04-30',
+    version: process.env.WATSON_DISOCVERY_VERSION,
     authenticator: new IamAuthenticator({
-        apikey: 'R40U-DmCB61YgzuOUkpX2w977Df_bt4SBcoBvqEnTA6X',
+        apikey: process.env.WATSON_DISCOVERY_APIKEY,
     }),
-    url: 'https://gateway.watsonplatform.net/discovery/api',
+    url: process.env.WATSON_DISCOVERY_URL,
 });
 
 let query = async (req, res) => {
@@ -15,8 +15,8 @@ let query = async (req, res) => {
     if (req.body.text) {
 
         const queryParams = {
-            environmentId: 'f4ecbe43-4aff-4cde-afec-635684d06daf',
-            collectionId: '30ea3744-34ad-4037-ac82-84099b108638',
+            environmentId: process.env.WATSON_DISCOVERY_ENVIRONMENT_ID,
+            collectionId: process.env.WATSON_DISCOVERY_COLLECTION_ID,
             naturalLanguageQuery: req.body.text
         };
 
