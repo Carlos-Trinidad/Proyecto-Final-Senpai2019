@@ -1,0 +1,5 @@
+---
+applications:
+- name: Proyecto-Final-Senpai2019-carlostrinidad 
+  memory: 256M
+  instances: 1

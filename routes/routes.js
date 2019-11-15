@@ -13,8 +13,27 @@ router.post('/classify/image', watsonVisualRecognitionController.classifyImage);
 router.post('/search/discovery', watsonDiscoveryController.query);
 
 router.post('/test/webhook/assistant', async (req, res) => {
-    console.log(req.body);
-    res.send({response: "Hola Webhook"});
+    if (req.body.action === 'reservar_hotel') {
+        //Hacer lógica de reserva de hotel;
+        let habitaciones = [11, 23, 54, 32, 26];
+        res.send(
+            {
+                success: true,
+                message: 'habitación reservada',
+                hotel: req.body.hotel,
+                date: req.body.date,
+                habitacion: habitaciones[0]
+            }
+        )
+    }
+    else{
+        res.send(
+            {
+                error: true,
+                message: 'action no valida'
+            }
+        )
+    }
 });
 
 module.exports = router;
